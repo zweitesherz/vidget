@@ -2,7 +2,10 @@
     new Vue({
         el: '#firepool',
         data: {
-            image: 'firepool-down',
+            comment:'',
+            picked:'',
+            question:   document.querySelector('.question').innerText,
+
         },
 
         methods: {
@@ -14,20 +17,29 @@
                 else {
                     document.getElementById('firepool').classList.add('firepool-down');
                     document.getElementById('firepool-icon').src = "svg/razvernut.svg"
-
-
                 }
             },
             btnDown () {
+
 
                 document.getElementById('firepool').classList.add('firepool-down-final');
                 document.getElementById('firepool').classList.remove('firepool-down');
             },
 
-            onSubmit () {
 
+            onSubmit: function () {
+                axios.post('https://reqres.in/api/register', {
+                    question: this.question,
+                    resp: this.picked
+
+                })
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
             }
         }
     });
-
 

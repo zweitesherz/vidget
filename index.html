@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     </head>
     <body>
         <div id="firepool" class="firepool firepool-down">
@@ -25,21 +26,30 @@
 
                     <div class="answers">
                         <div class="form_radio">
-                            <input id="radio-1" type="radio" name="radio" value="1" onchange="document.getElementById('submit').disabled = !this.checked;" >
+                            <input id="radio-1" type="radio" name="radio" value="Несколько раз в неделю" onchange="document.getElementById('submit').disabled = !this.checked;" v-model="picked">
                             <label for="radio-1">Несколько раз в неделю</label>
+                            <label  for="radio-1" class="comment">
+                                <p>Введите комментарий</p>
+
+                                <textarea v-model="comment" class="form-control">
+
+                                </textarea>
+                            </label>
                         </div>
 
                         <div class="form_radio">
-                            <input id="radio-2" type="radio" name="radio" value="2"  onchange="document.getElementById('submit').disabled = !this.checked;">
+                            <input id="radio-2" type="radio" name="radio" value="Раз в неделю"  onchange="document.getElementById('submit').disabled = !this.checked;" v-model="picked">
                             <label for="radio-2">Раз в неделю</label>
                         </div>
 
                         <div class="form_radio">
-                            <input id="radio-3" type="radio" name="radio" value="3"  onchange="document.getElementById('submit').disabled = !this.checked;">
+                            <input id="radio-3" type="radio" name="radio" value="Раз в месяц"  onchange="document.getElementById('submit').disabled = !this.checked;" v-model="picked">
                             <label for="radio-3">Раз в месяц</label>
                         </div>
 
                     </div>
+
+
 
                     <div class="btn-wrapper" @click="btnDown">
                         <button type="submit" class="btn-submit" disabled="disabled" id="submit">Отправить</button>

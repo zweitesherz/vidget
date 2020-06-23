@@ -152,7 +152,7 @@
     font-style: normal;
     font-weight: normal;
     font-size: 15px;
-    border-radius: 25px;
+    border-radius: 20px;
 
 }
 
@@ -223,4 +223,20 @@
         line-height: 18px;
         font-size: 18px;
     }
+}
+
+.comment {
+    display: flex !important;
+    flex-direction: column;
+    margin-top: 2px;
+    background: none !important;
+}
+
+
+::-webkit-resizer {
+ background-color: #fff;
+}
+
+.form-control {
+    width: inherit;
 }
