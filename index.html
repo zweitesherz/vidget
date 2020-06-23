@@ -17,35 +17,36 @@
                </div>
                 <img src="svg/razvernut.svg" class="firepool_header-krest" id="firepool-icon">
             </div>
+
             <div class='firepool_body'>
 
                 <form id="formResponses" v-on:submit.prevent="onSubmit">
-                    <div class="firepool_body-quest">
-                        <p class="question">Как часто вы заходите на наш сайт? </p>
-                    </div>
+<!--                    <div class="firepool_body-quest">-->
+<!--                        <p class="question">Как часто вы заходите на наш сайт? </p>-->
+<!--                    </div>-->
+                    <question text="Hello"></question>
 
                     <div class="answers">
-                        <div class="form_radio">
-                            <input id="radio-1" type="radio" name="radio" value="Несколько раз в неделю" onchange="document.getElementById('submit').disabled = !this.checked;" v-model="picked">
-                            <label for="radio-1">Несколько раз в неделю</label>
-                            <label  for="radio-1" class="comment">
-                                <p>Введите комментарий</p>
+<!--                        <div class="form_radio">-->
+<!--                            <input id="radio-1" type="radio" name="radio" value="Несколько раз в неделю" onchange="document.getElementById('submit').disabled = !this.checked;" v-model="picked">-->
+<!--                            <label for="radio-1">Несколько раз в неделю</label>-->
+<!--                            <label  for="radio-1" class="comment">-->
+<!--                                <p>Введите комментарий</p>-->
+<!--                                <textarea v-model="comment" class="form-control"></textarea>-->
+<!--                            </label>-->
+<!--                        </div>-->
 
-                                <textarea v-model="comment" class="form-control">
+<!--                        <div class="form_radio">-->
+<!--                            <input id="radio-2" type="radio" name="radio" value="Раз в неделю"  onchange="document.getElementById('submit').disabled = !this.checked;" v-model="picked">-->
+<!--                            <label for="radio-2">Раз в неделю</label>-->
+<!--                        </div>-->
 
-                                </textarea>
-                            </label>
-                        </div>
+<!--                        <div class="form_radio">-->
+<!--                            <input id="radio-3" type="radio" name="radio" value="Раз в месяц"  onchange="document.getElementById('submit').disabled = !this.checked;" v-model="picked">-->
+<!--                            <label for="radio-3">Раз в месяц</label>-->
+<!--                        </div>-->
+                        <response-comment value="Какой-то ответ" id="radio-1"  type="radio"></response-comment>
 
-                        <div class="form_radio">
-                            <input id="radio-2" type="radio" name="radio" value="Раз в неделю"  onchange="document.getElementById('submit').disabled = !this.checked;" v-model="picked">
-                            <label for="radio-2">Раз в неделю</label>
-                        </div>
-
-                        <div class="form_radio">
-                            <input id="radio-3" type="radio" name="radio" value="Раз в месяц"  onchange="document.getElementById('submit').disabled = !this.checked;" v-model="picked">
-                            <label for="radio-3">Раз в месяц</label>
-                        </div>
 
                     </div>
 
@@ -54,6 +55,7 @@
                     <div class="btn-wrapper" @click="btnDown">
                         <button type="submit" class="btn-submit" disabled="disabled" id="submit">Отправить</button>
                     </div>
+
                 </form>
             </div>
         </div>
