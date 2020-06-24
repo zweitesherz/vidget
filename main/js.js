@@ -16,6 +16,7 @@ Vue.component('response-comment', {
         return {
             picked : '',
             showComment: false
+
         }
     },
     watch: {
@@ -23,6 +24,8 @@ Vue.component('response-comment', {
             this.showComment = (this.picked);
         }
     },
+
+
     template: `<div class="form_radio"> 
 <input v-model="picked" :id="id" :type="type" name="radio" :value="value"  onchange="document.getElementById(\'submit\').disabled = !this.checked;">
 <label :for="id">{{ value }}</label> 
@@ -45,10 +48,13 @@ new Vue({
         typeRadio:'radio',
         questionText:'Как тебе наш сайт?',
         picked : '',
+        info:null
+    },
 
-
-
-
+    mounted () {
+        axios
+        .get('api.json')
+        .then(response => (this.info = response));
     },
 
 
@@ -69,13 +75,6 @@ new Vue({
             document.getElementById('firepool').classList.add('firepool-down-final');
             document.getElementById('firepool').classList.remove('firepool-down');
         },
-
-
-        // commentInput:function(){
-        //     if (document.getElementById('radio-1').checked === "checked") {
-        //      return   commentInput1 = true
-        //     }
-        // },
 
         onSubmit: function () {
             axios.post('https://reqres.in/api/register', {

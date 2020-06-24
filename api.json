@@ -1,0 +1,9 @@
+{
+  "question": "Я могу задать вопрос?",
+  "responses": [{
+    "responseText": "Да, ты можешь спрашивать",
+    "id":1,
+    "isComment": true
+  }]
+
+}
