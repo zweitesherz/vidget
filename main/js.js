@@ -1,11 +1,11 @@
 Vue.component('question', {
     props: ['text'],
-    template: '<div class="firepool_body-quest"><p class="question">{{ text }}</p></div>'
+    template: '<div class="firepool_body-quest" ><p class="question">{{ text }}</p></div>'
 });
 
 Vue.component('response', {
     props: ['value','id','type'],
-    template: '<div class="form_radio"> <input  :id="id" :type="type" name="radio" :value="value" onchange="document.getElementById(\'submit\').disabled = !this.checked;"><label :for="id">{{ value }}</label></div>'
+    template: '<div class="form_radio"> <input :id="id" :type="type" name="radio" :value="value" onchange="document.getElementById(\'submit\').disabled = !this.checked;"><label :for="id">{{ value }}</label></div>'
 });
 
 
@@ -15,46 +15,48 @@ Vue.component('response-comment', {
     data() {
         return {
             picked : '',
-            showComment: false
-
+            showComment: false,
         }
     },
     watch: {
         picked (){
-            this.showComment = (this.picked);
+            this.showComment = (this.picked)
         }
     },
-
-
     template: `<div class="form_radio"> 
 <input v-model="picked" :id="id" :type="type" name="radio" :value="value"  onchange="document.getElementById(\'submit\').disabled = !this.checked;">
 <label :for="id">{{ value }}</label> 
+<div></div>
 
-<label :for="id"  class="comment" v-if="showComment">
+<label  :for="id"  class="comment" v-if="value == picked">
 <p>Введите комментарий</p> 
+
 <textarea class="form-control"></textarea>
 </label>
 </div>`
 
 });
 
+
+
 new Vue({
     el: '#firepool',
     data: {
         comment:'',
-        //question:   document.querySelector('.question').innerText,
-        respQuestion:'Мне нравится этот сайт',
-        id:'radio-1',
         typeRadio:'radio',
-        questionText:'Как тебе наш сайт?',
         picked : '',
-        info:null
+        info: [],
+
     },
 
-    mounted () {
+    mounted: function () {
         axios
         .get('api.json')
-        .then(response => (this.info = response));
+        .then (response => {
+            this.info = response.data;
+            console.log()
+
+        })
     },
 
 

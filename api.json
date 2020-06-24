@@ -1,9 +1,26 @@
 {
-  "question": "Я могу задать вопрос?",
-  "responses": [{
-    "responseText": "Да, ты можешь спрашивать",
-    "id":1,
-    "isComment": true
-  }]
+  "question": "Я могу задать вопрос???",
+  "responses": [
+    {
+      "responseText": "Да, ты можешь спрашивать",
+      "id":1,
+      "isComment": true
+    },
+
+    {
+      "responseText": "Да, ты можешь спрашивать2",
+      "id":2,
+      "isComment": true
+    },
+
+
+    {
+      "responseText": "Да, ты можешь спрашивать3",
+      "id":3,
+      "isComment": false
+    }
+
+
+  ]
 
 }
