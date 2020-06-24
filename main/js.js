@@ -8,11 +8,30 @@ Vue.component('response', {
     template: '<div class="form_radio"> <input  :id="id" :type="type" name="radio" :value="value" onchange="document.getElementById(\'submit\').disabled = !this.checked;"><label :for="id">{{ value }}</label></div>'
 });
 
+
+
 Vue.component('response-comment', {
     props: ['value','id','type'],
-    template: '<div class="form_radio"> <input  :id="id" :type="type" name="radio" :value="value" onchange="document.getElementById(\'submit\').disabled = !this.checked;"><label :for="id">{{ value }}</label> <label  :for="id" class="comment"><p>Введите комментарий</p> <textarea class="form-control"></textarea></label></div>'
+    data() {
+        return {
+            picked : '',
+            showComment: false
+        }
+    },
+    watch: {
+        picked (){
+            this.showComment = (this.picked);
+        }
+    },
+    template: `<div class="form_radio"> 
+<input v-model="picked" :id="id" :type="type" name="radio" :value="value"  onchange="document.getElementById(\'submit\').disabled = !this.checked;">
+<label :for="id">{{ value }}</label> 
 
-
+<label :for="id"  class="comment" v-if="showComment">
+<p>Введите комментарий</p> 
+<textarea class="form-control"></textarea>
+</label>
+</div>`
 
 });
 
@@ -20,10 +39,18 @@ new Vue({
     el: '#firepool',
     data: {
         comment:'',
-        picked:'',
         //question:   document.querySelector('.question').innerText,
+        respQuestion:'Мне нравится этот сайт',
+        id:'radio-1',
+        typeRadio:'radio',
+        questionText:'Как тебе наш сайт?',
+        picked : '',
+
+
+
 
     },
+
 
     methods: {
         changeClass() {
@@ -43,6 +70,12 @@ new Vue({
             document.getElementById('firepool').classList.remove('firepool-down');
         },
 
+
+        // commentInput:function(){
+        //     if (document.getElementById('radio-1').checked === "checked") {
+        //      return   commentInput1 = true
+        //     }
+        // },
 
         onSubmit: function () {
             axios.post('https://reqres.in/api/register', {
