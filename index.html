@@ -16,7 +16,7 @@
                    </p>
                </div>
                 <img src="svg/razvernut.svg" class="firepool_header-krest" id="firepool-icon">
-            </div>
+        </div>
 
             <div class='firepool_body'>
 
@@ -24,8 +24,8 @@
                     <question v-if="info"  :text="info.question"></question>
 
                     <div class="answers">
-                        <response v-for="response in info.responses" v-if="response.isComment==false" :value="response.responseText" :id="response.id" :type="typeRadio" :key="response.id"></response>
-                        <response-comment v-for="response in info.responses" v-if="response.isComment==true" :value="response.responseText" :id="response.id" :type="typeRadio" :key="response.id"></response-comment>
+                        <response v-for="(response,i) in info.responses" v-if="response.isComment==false" :value="response.responseText" :id="response.id" type="radio" :key="response.id"   :checked="active === i" @select="active = i"></response>
+                        <response-comment @login='onLogin' v-for="(response,i) in info.responses" v-if="response.isComment==true" :value="response.responseText" :id="response.id" type="radio" :key="response.id" :checked="active === i" @select="active = i" :comment.sync="response.comment"></response-comment>
                     </div>
 
                     <div class="btn-wrapper" @click="btnDown">
