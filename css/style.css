@@ -44,7 +44,7 @@
 }
 
 .firepool-down {
-    transform: translate(0px, 90%);
+    transform: translateY(calc(100% - 40px));
 
 }
 

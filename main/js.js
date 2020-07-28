@@ -87,15 +87,31 @@ new Vue({
 
     mounted: function () {
         axios
-        .get('api.json')
+        .get('https://firepool.app/api/pool/34a8af12-8f08-4787-ac87-36f519209505')
         .then (response => {
-            this.info = response.data;
-            console.log()
+            this.info = response.data.data;
+            console.log(this.info)
 
         })
     },
 
+
+    // created:  function  () {
+    //     console.log(document.querySelector('answers'))
+    //
+    // },
+
+
+
+
     methods: {
+
+
+    controlAnswers () {
+
+        console.log(document.querySelector('answers').style.height)
+
+        },
 
         onLogin (data) {
             console.log('child component said id ', data);

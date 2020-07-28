@@ -24,8 +24,8 @@
                     <question v-if="info"  :text="info.question"></question>
 
                     <div class="answers">
-                        <response v-for="(response,i) in info.responses" v-if="response.isComment==false" :value="response.responseText" :id="response.id" type="radio" :key="response.id"   :checked="active === i" @select="active = i"></response>
-                        <response-comment @login='onLogin' v-for="(response,i) in info.responses" v-if="response.isComment==true" :value="response.responseText" :id="response.id" type="radio" :key="response.id" :checked="active === i" @select="active = i" :comment.sync="response.comment"></response-comment>
+                        <response v-for="(response,i) in info.fields" v-if="response.is_commentable==false" :value="response.title" :id="response.id" type="radio" :key="response.id"   :checked="active === i" @select="active = i"></response>
+                        <response-comment @login='onLogin' v-for="(response,i) in info.fields" v-if="response.is_commentable==true" :value="response.title" :id="response.id" type="radio" :key="response.id" :checked="active === i" @select="active = i" :comment.sync="response.comment"></response-comment>
                     </div>
 
                     <div class="btn-wrapper" @click="btnDown">
