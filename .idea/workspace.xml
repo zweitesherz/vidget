@@ -4,8 +4,6 @@
     <list default="true" id="792e4628-ff39-4e1f-bb77-29fc63a01178" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/roboto-v20-latin-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/roboto-v20-latin-regular.woff2" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +76,7 @@
       <workItem from="1593435842590" duration="9484000" />
       <workItem from="1593446629961" duration="54000" />
       <workItem from="1594630045154" duration="40000" />
-      <workItem from="1595907633429" duration="1629000" />
+      <workItem from="1595907633429" duration="2201000" />
     </task>
     <servers />
   </component>
