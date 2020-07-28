@@ -1,15 +1,30 @@
-
-/* roboto-regular - latin */
+/* roboto-italic - latin_cyrillic */
+@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Roboto Italic'), local('Roboto-Italic'),
+    url('../fonts/roboto-v20-latin_cyrillic-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/roboto-v20-latin_cyrillic-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* roboto-regular - latin_cyrillic */
 @font-face {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     src: local('Roboto'), local('Roboto-Regular'),
-    url('../fonts/roboto-v20-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('../fonts/roboto-v20-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('../fonts/roboto-v20-latin_cyrillic-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/roboto-v20-latin_cyrillic-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-
-
+/* roboto-500 - latin_cyrillic */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Roboto Medium'), local('Roboto-Medium'),
+    url('../fonts/roboto-v20-latin_cyrillic-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/roboto-v20-latin_cyrillic-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
 
 
 
@@ -20,6 +35,7 @@
 }
 
 .firepool {
+    font-family: Roboto;
     max-width: 250px;
     bottom: 0;
     position: fixed;
@@ -118,6 +134,8 @@
     margin-top: 28px;
     margin-bottom: 20px;
     margin-right: 15px;
+    font-size: 17px;
+    font-weight: 700;
 }
 
 .btn-wrapper {
@@ -144,14 +162,14 @@
     padding-bottom: 7px;
     padding-top: 7px;
     margin-right: 0;
-    line-height: 13px;
     user-select: none;
     background: #ebf1f9;
     align-items: center;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 15px;
+    font-size: 18px;
+    line-height: 1.5;
     border-radius: 20px;
 
 }
@@ -166,8 +184,8 @@
 }
 
 .question {
-    font-size: 16px;
-    line-height: 16px;
+    font-size: 18px;
+    line-height: 1.5;
     padding: 10px;
     font-family: Roboto;
     font-style: normal;
