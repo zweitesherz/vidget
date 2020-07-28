@@ -46,7 +46,7 @@
 }
 
 .firepool_header {
-    width: 250px;
+    width: 248px;
     height: 41px;
     border-radius: 15px 25px 0 0;
 
@@ -113,7 +113,7 @@
 .btn-submit {
     width: 134px;
     height: 33px;
-    background: #7C67FF;
+    background: #6788ff;
     border-radius: 5px;
     margin-top: 28px;
     margin-bottom: 20px;
@@ -146,7 +146,7 @@
     margin-right: 0;
     line-height: 13px;
     user-select: none;
-    background: #D7E6F8;
+    background: #ebf1f9;
     align-items: center;
     font-family: Roboto;
     font-style: normal;
